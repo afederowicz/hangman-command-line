@@ -1,7 +1,7 @@
 var inquirer = require('inquirer')
 var Word = require('./Word.js');
 
-var words = ['jeff', 'john', 'rhyna'];
+var words = ['dooku', 'kenobi', 'anakin', 'vader', 'sidious', 'padme', 'jango'];
 
 var wordToPlay = words[Math.floor(Math.random()*words.length)];
 
@@ -14,9 +14,9 @@ function askLetter(){
     {
     type: "input",
     name: "guess",
-    message: "What letter do you guess? If you are done then say no."},
+    message: "Welcome to the Star Wars hangman game! Guess a letter! If you are done, type 'done'."},
     ]).then(function(data){
-        if (data.guess != 'no') {
+        if (data.guess != 'done') {
             wordObject.updateLetter(data.guess);
 
             console.log(wordObject.display());
